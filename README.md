@@ -13,6 +13,9 @@ MLUTIL for Day-to-Day <code>ML</code> Workflow</h1>
 </p>
 
 <p align="center">
+
+<img src="https://img.shields.io/badge/Python%20%20%F0%9F%90%8D-3.8-blueviolet">
+<img src="https://img.shields.io/badge/Machine%E2%9A%9B%EF%B8%8F-Learning-43BFF1">
 <img src="https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github">
 <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat">
 <a href="https://marketplace.visualstudio.com/items?itemName=Aashish.emoji-in-git-commit">
@@ -179,7 +182,7 @@ plot_history(history)
 
 ## [Changelog →](CHANGELOG.md)
 
-All notable changes in this project's [released versions] () are documented in the [changelog](CHANGELOG.md) file.
+All notable changes in this project's released versions are documented in the [changelog](CHANGELOG.md) file.
 
 <!-- ## License -->
 
