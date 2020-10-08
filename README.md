@@ -107,6 +107,7 @@ print(model.best_params_)
 <tr align='center'>
 <td> Keras </td>
 <td> RandomForest</td>
+<td> CatBoost</td>
 </tr>
 <td>
 
