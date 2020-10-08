@@ -153,52 +153,6 @@ scoring_fit='accuracy')
 print(model.best_score_)
 print(model.best_params_)
 ```
-</td>
-<tr align='center'>
-<td> CatBoost </td>
-<td> GradientBoosting </td>
-</tr>
-<td>
-```python
-from catboost import CatBoostClassifier
-clf = CatBoostClassifier(iterations=759,
-    learning_rate=0.06,
-    random_strength=0.1,
-    depth=10,
-    loss_function='MultiClass',
-    eval_metric='Accuracy',
-    leaf_estimation_method='Newton',
-    task_type="GPU",
-    devices='0:1'
-)
-
-clf.fit(
-    X_train, y_train,
-    cat_features=cat_features,
-    eval_set=(X_test, y_test),
-    verbose=False,
-    plot=True
-)
-
-y_pred=clf.predict(X_test)
-f1_score(y_test,y_pred)
-accuracy_score(y_test,y_pred)
-```
-</td>
-<td>
-```python
-from sklearn.ensemble import GradientBoostingClassifier
-clf = GradientBoostingClassifier(random_state=0,
-                                 n_estimators=200,
-                                 max_depth=5,
-                                 verbose=1)
-
-clf.fit(X_train, y_train)
-clf.predict(X_test)
-clf.score(X_test, y_test)
-```
-
-</td>
 </tr>
 </table>
 
