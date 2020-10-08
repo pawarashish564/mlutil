@@ -190,7 +190,7 @@ accuracy_score(y_test,y_pred)
  <td>
 
 ```python
-model = GradientBoostingClassifier(random_state=0,
+model = GradientBoostingClassifier(random_state=1,
                                  n_estimators=200,
                                  max_depth=5,
                                  verbose=1)
