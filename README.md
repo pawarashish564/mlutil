@@ -158,7 +158,7 @@ print(model.best_params_)
 <td>
 
 ```python
-from catboost import Pool, CatBoostClassifier
+from catboost import CatBoostClassifier
 clf = CatBoostClassifier(iterations=759,
     learning_rate=0.06,
     random_strength=0.1,
@@ -173,11 +173,14 @@ clf = CatBoostClassifier(iterations=759,
 clf.fit(
     X_train, y_train,
     cat_features=cat_features,
-    eval_set=(X_val, y_val),
+    eval_set=(X_test, y_test),
     verbose=False,
     plot=True
 )
-clf.score(X_val, y_val)
+
+y_pred=clf.predict(X_test)
+f1_score(y_test,y_pred)
+accuracy_score(y_test,y_pred)
 ```
 </td>
 </tr>
