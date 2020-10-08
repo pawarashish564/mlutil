@@ -154,6 +154,31 @@ print(model.best_score_)
 print(model.best_params_)
 ```
 </td>
+<td>
+
+```python
+from catboost import Pool, CatBoostClassifier
+clf = CatBoostClassifier(iterations=759,
+    learning_rate=0.06,
+    random_strength=0.1,
+    depth=10,
+    loss_function='MultiClass',
+    eval_metric='Accuracy',
+    leaf_estimation_method='Newton',
+    task_type="GPU",
+    devices='0:1'
+)
+
+clf.fit(
+    X_train, y_train,
+    cat_features=cat_features,
+    eval_set=(X_val, y_val),
+    verbose=False,
+    plot=True
+)
+clf.score(X_val, y_val)
+```
+</td>
 </tr>
 
 
