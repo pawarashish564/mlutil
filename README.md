@@ -107,7 +107,6 @@ print(model.best_params_)
 <tr align='center'>
 <td> Keras </td>
 <td> RandomForest</td>
-<td> CatBoost</td>
 </tr>
 <td>
 
@@ -155,8 +154,11 @@ print(model.best_score_)
 print(model.best_params_)
 ```
 </td>
+<tr align='center'>
+<td> CatBoost </td>
+<td> GradientBoosting </td>
+</tr>
 <td>
-
 ```python
 from catboost import CatBoostClassifier
 clf = CatBoostClassifier(iterations=759,
@@ -183,9 +185,21 @@ f1_score(y_test,y_pred)
 accuracy_score(y_test,y_pred)
 ```
 </td>
+<td>
+```python
+from sklearn.ensemble import GradientBoostingClassifier
+clf = GradientBoostingClassifier(random_state=0,
+                                 n_estimators=200,
+                                 max_depth=5,
+                                 verbose=1)
+
+clf.fit(X_train, y_train)
+clf.predict(X_test)
+clf.score(X_test, y_test)
+```
+
+</td>
 </tr>
-
-
 </table>
 
 ## 2. 🦄 plot_history for Keras Model history
