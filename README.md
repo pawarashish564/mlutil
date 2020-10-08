@@ -157,7 +157,7 @@ print(model.best_params_)
 ------------------------------------------------------------------------------------------
  <tr align='center'>
     <td> CatBoost </td>
-    <td> GradientBoost </td>
+    <td> GradientBoosting </td>
   </tr>
   <tr>
    <td>
