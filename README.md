@@ -155,7 +155,51 @@ print(model.best_params_)
 ```
 </td>
 </tr>
+<tr align='center'>
+    <td> CatBoost </td>
+    <td> GradientBoosting </td>
+  </tr>
+  <tr>
+   <td>
 
+```python
+model = CatBoostClassifier(iterations=759,
+    learning_rate=0.06,
+    random_strength=0.1,
+    depth=10,
+    loss_function='MultiClass',
+    eval_metric='Accuracy',
+    leaf_estimation_method='Newton',
+    task_type="GPU",
+    devices='0:1'
+)
+
+model.fit(
+    X_train, y_train,
+    cat_features=cat_features,
+    eval_set=(X_test, y_test),
+    verbose=False,
+    plot=True
+)
+
+y_pred=model.predict(X_test)
+f1_score(y_test,y_pred)
+accuracy_score(y_test,y_pred)
+``` 
+</td>
+ <td>
+
+```python
+model = GradientBoostingClassifier(random_state=1,
+                                 n_estimators=200,
+                                 max_depth=5,
+                                 verbose=1)
+
+model.fit(X_train, y_train)
+model.predict(X_test)
+model.score(X_test, y_test)
+```
+</td></tr>
 
 </table>
 
