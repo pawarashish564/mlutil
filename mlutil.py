@@ -82,3 +82,41 @@ def plot_history(self,history):
         plt.ylabel('Accuracy')
         plt.legend()
         plt.show()
+
+
+# Utility function to train the Pytorch model
+
+
+# model = torch.nn.Linear(3, 2)
+# loss_fn = torch.nn.functional.mse_loss
+# opt = torch.optim.SGD(model.parameters(), lr=1e-5)
+
+# from torch.utils.data import DataLoader,TensorDataSet
+# train_dl= DataLoader(TensorDataset(inputs, targets),batch_size,shuffle=True)
+
+def fit(num_epochs, model, loss_fn, opt, train_dl):
+    
+    # Repeat for given number of epochs
+    for epoch in range(num_epochs):
+        
+        # Train with batches of data
+        for xb,yb in train_dl:
+            
+            # 1. Generate predictions
+            pred = model(xb)
+            
+            # 2. Calculate loss
+            loss = loss_fn(pred, yb)
+            
+            # 3. Compute gradients
+            loss.backward()
+            
+            # 4. Update parameters using gradients
+            opt.step()
+            
+            # 5. Reset the gradients to zero
+            opt.zero_grad()
+        
+        # Print the progress
+        if (epoch+1) % 10 == 0:
+            print('Epoch [{}/{}], Loss: {:.4f}'.format(epoch+1, num_epochs, loss.item()))
