@@ -94,7 +94,7 @@ def plot_history(self,history):
 # from torch.utils.data import DataLoader,TensorDataSet
 # train_dl= DataLoader(TensorDataset(inputs, targets),batch_size,shuffle=True)
 
-def fit(num_epochs, model, loss_fn, opt, train_dl):
+def pytorch_fit(num_epochs, model, loss_fn, opt, train_dl):
     
     # Repeat for given number of epochs
     for epoch in range(num_epochs):
