@@ -79,7 +79,7 @@ All notable changes in this project's updates are documented in this file.
 
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
 
-> 📦 view_model(model,show_info) method for Keras Model visuz. <br/>
+> 📦 view_model(model,show_info) method for Keras Model visuz. [`e76024c`](https://github.com/pawarashish564/mlutil/commit/e0cf3126838d01dcf617b6317e0fe4a9a3abe7b4)<br/>
 
 ![👌 IMPROVE:](https://img.shields.io/badge/-IMPROVEMENT-gray.svg?colorB=39AA54)
 
