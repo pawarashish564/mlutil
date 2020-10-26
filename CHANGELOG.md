@@ -32,14 +32,14 @@ All notable changes in this project's updates are documented in this file.
 
 <br> -->
 
-### Update: 0.0.1 
+### Update: 0.0.1
 
 <br/>
 
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
 
-> 📦 HyperParameter Optimization  <br>
-> 📦 plot_history for Keras Model history  <br>
+> 📦 HyperParameter Optimization [`88b542d`](https://github.com/pawarashish564/mlutil/blob/9bee02251e850523074e08ececf67a57131ef8dc/mlutil.py) <br>
+> 📦 plot_history for Keras Model history [`88b542d`](https://github.com/pawarashish564/mlutil/blob/9bee02251e850523074e08ececf67a57131ef8dc/mlutil.py) <br>
 
 <!-- > 📦 First Version [`3fc01c1`]() <br> -->
 <!-- > 📦 First commit [`8c31a78`]() <br> -->
@@ -57,20 +57,30 @@ All notable changes in this project's updates are documented in this file.
 
 ![DOCS](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
 
-> 📖 Readme header  <br>
-> 📖 Project setup  <br>
+> 📖 Readme header <br>
+> 📖 Project setup <br>
+
 <!-- >  📖 Update the changelog [`57a4bae`]() <br> -->
 <!-- >  📖 Update the changelog [`241a54a`]() <br> -->
 <!-- > 📖 Readme Header [`67335da`]() <br> -->
 
 <br>
 
-### Update: 0.0.2 
+### Update: 0.0.2
 
 <br>
 
+![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
+
+> 📦 fit(num_epochs, model, loss_fn, opt, train_dl) method for PyTorch Models. [`f3a7be8`](https://github.com/pawarashish564/mlutil/commit/f3a7be801e1bf73fd582df1c6ac0c3d27f7b7c31) <br>
+
+### Update 0.0.3
+<br>
 
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
 
-> 📦 fit(num_epochs, model, loss_fn, opt, train_dl) method for PyTorch Models. <br>
+> 📦 view_model(model,show_info) method for Keras Model visuz. <br/>
 
+![👌 IMPROVE:](https://img.shields.io/badge/-IMPROVEMENT-gray.svg?colorB=39AA54)
+
+> 👌 Rename fit method for pytorch to pytorch_fit [`97d065c`](https://github.com/pawarashish564/mlutil/commit/e76024c5ddd5fcf8de88f01f1bb10d27bc31e98b) <br>
