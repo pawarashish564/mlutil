@@ -120,3 +120,31 @@ def pytorch_fit(num_epochs, model, loss_fn, opt, train_dl):
         # Print the progress
         if (epoch+1) % 10 == 0:
             print('Epoch [{}/{}], Loss: {:.4f}'.format(epoch+1, num_epochs, loss.item()))
+
+
+# Viz NN models (Keras Models)
+
+from keras.utils import plot_model
+
+from IPython.display import SVG
+from keras.utils.vis_utils import model_to_dot
+
+# pass keras model  
+def view_model(model,show_info = False):
+    if show_info:
+        return plot_model(model, to_file='model.png',show_shapes=True, show_layer_names=True)
+    else:
+        return SVG(model_to_dot(model).create(prog='dot', format='svg'))
+
+
+# model = Sequential()
+# model.add(Dense(2, input_dim=1, activation='relu'))
+# model.add(Dropout(0.4))
+
+# model.add(Dense(1, activation='sigmoid'))
+# model.add(Dropout(0.4))
+
+# model.compile(optimizer = 'adam', 
+#               loss='binary_crossentropy', metrics=['accuracy'])
+
+# view_model(model,show_info=True)
