@@ -148,3 +148,47 @@ def view_model(model,show_info = False):
 #               loss='binary_crossentropy', metrics=['accuracy'])
 
 # view_model(model,show_info=True)
+
+
+# Function: print_quantile_info(qu_dataset, qu_field)
+#   Print out the following information about the data
+#   - interquartile range
+#   - upper_inner_fence
+#   - lower_inner_fence
+#   - upper_outer_fence
+#   - lower_outer_fence
+#   - percentage of records out of inner fences
+#   - percentage of records out of outer fences
+# Input: 
+#   - pandas dataframe (qu_dataset)
+#   - name of the column to analyze (qu_field)
+# Output:
+#   None
+
+def print_quantile_info(qu_dataset, qu_field):
+    a = qu_dataset[qu_field].describe()
+    
+    iqr = a["75%"] - a["25%"]
+    print("interquartile range:", iqr)
+    
+    upper_inner_fence = a["75%"] + 1.5 * iqr
+    lower_inner_fence = a["25%"] - 1.5 * iqr
+    print("upper_inner_fence:", upper_inner_fence)
+    print("lower_inner_fence:", lower_inner_fence)
+    
+    upper_outer_fence = a["75%"] + 3 * iqr
+    lower_outer_fence = a["25%"] - 3 * iqr
+    print("upper_outer_fence:", upper_outer_fence)
+    print("lower_outer_fence:", lower_outer_fence)
+    
+    count_over_upper = len(qu_dataset[qu_dataset[qu_field]>upper_inner_fence])
+    count_under_lower = len(qu_dataset[qu_dataset[qu_field]<lower_inner_fence])
+    percentage = 100 * (count_under_lower + count_over_upper) / a["count"]
+    print("percentage of records out of inner fences: %.2f"% (percentage))
+    
+    count_over_upper = len(qu_dataset[qu_dataset[qu_field]>upper_outer_fence])
+    count_under_lower = len(qu_dataset[qu_dataset[qu_field]<lower_outer_fence])
+    percentage = 100 * (count_under_lower + count_over_upper) / a["count"]
+    print("percentage of records out of outer fences: %.2f"% (percentage))
+
+
