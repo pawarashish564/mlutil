@@ -248,3 +248,21 @@ def remove_outliers_using_quantiles(qu_dataset, qu_field, qu_fence):
     print("length of new dataframe after outlier removal:", len(output_dataset))
     
     return output_dataset
+  
+  #data is pandas df
+  def replace_outliers(data):
+    for col in data.columns:
+        Q1 = data[col].quantile(0.25)
+        Q3 = data[col].quantile(0.75)
+        IQR = Q3 - Q1
+        median_ = data[col].median()
+        # data[col].mask(((data[col] < Q1 - 1.5*IQR) | (data[col] > Q3 + 1.5*IQR)), median_, inplace=True)
+        # data[col] = np.where(((data[col] < Q1 - 1.5*IQR) | (data[col] > Q3 + 1.5*IQR)),
+        #                     median_, data[col])
+        data.loc[((data[col] < Q1 - 1.5*IQR) | (data[col] > Q3 + 1.5*IQR)), col] = median_
+    return data
+  
+  
+  
+  
+  
