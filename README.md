@@ -198,4 +198,4 @@ Methods that are useful for Data mining, Data visuz, Model Evaluation, Improving
 * Create Pull Request. 
 <!-- ## License -->
 
-MIT ⓒ Aashish Pawar. Follow me on Github [@pawarashish564 →](https://github.com/pawarashish564)
+Aashish Pawar. Follow me on Github [@pawarashish564 →](https://github.com/pawarashish564)
